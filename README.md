@@ -3,7 +3,7 @@
 Xylophone Flutter App
 
 #### Final Result
-![Screenshot_20200909-223106](https://user-images.githubusercontent.com/17056277/92675089-a274f900-f2ec-11ea-9f15-78d7c1adb816.png){:height="700px" width="400px"}
+![Screenshot_20200909-223106](https://user-images.githubusercontent.com/17056277/92675089-a274f900-f2ec-11ea-9f15-78d7c1adb816.png){:height="50%" width="50%"}
 
 We’re going to make a music app that plays Xylophone sounds. For every Beethoven out there, this will let you unleash your musical talent where ever you are. 
 
