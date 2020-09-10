@@ -1,5 +1,7 @@
 import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 void main() => runApp(XylophoneApp());
 
@@ -10,12 +12,32 @@ class XylophoneApp extends StatelessWidget {
   }
 
   Widget buildKey({Color keyColor, int keySound}) {
-    return Expanded(
-      child: FlatButton(
-        color: keyColor,
-        onPressed: () {
-          playSound(keySound);
-        },
+    return Container(
+      margin: EdgeInsets.fromLTRB(
+          keySound.toDouble() * 8, 0, keySound.toDouble() * 8, 0),
+      child: SizedBox(
+        height: 90,
+        child: FlatButton(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          color: keyColor,
+          onPressed: () {
+            playSound(keySound);
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.black,
+                radius: 5.0,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.black,
+                radius: 5.0,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -27,7 +49,7 @@ class XylophoneApp extends StatelessWidget {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               buildKey(keyColor: Colors.red, keySound: 1),
               buildKey(keyColor: Colors.orange, keySound: 2),
